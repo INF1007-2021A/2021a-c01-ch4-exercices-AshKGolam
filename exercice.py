@@ -4,10 +4,7 @@
 
 def is_even_len(string: str) -> bool:
     longueur = len(string)
-    if longueur % 2 == 0:
-        return True
-    else:
-        return False
+    return longueur % 2 == 0
 
 
 def remove_third_char(string: str) -> str:
@@ -38,13 +35,12 @@ def get_number_of_char(string: str, char: str) -> int:
 
 def get_number_of_words(sentence: str, word: str) -> int:
     counter = 0
-    for i in range(len(sentence)):
-        if sentence[i] == "d":
-            if sentence[i+1] =="o":
-                if sentence[i+2]=="o":
-                    counter = counter + 1
+    list = sentence.split()
+    for element in list:
+        if element.strip() == word:
+            counter = counter + 1
     return counter
-    
+
 
 
 def main() -> None:
